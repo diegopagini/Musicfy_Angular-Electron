@@ -1,43 +1,39 @@
-import { BrowserWindow as bwindow } from 'electron';
-
-const electron = require('electron');
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-
+const { app, BrowserWindow } = require('electron');
+const url = require('url');
 const path = require('path');
-const isDev = require('electron-is-dev');
 
-let mainWindow: bwindow;
+let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 1500,
-    height: 1000,
-    title: 'Musicfy',
-    // titleBarStyle: "hiddenInset",
-    // resizable: false,
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+    },
   });
+
   mainWindow.loadURL(
-    isDev
-      ? 'http://localhost:3000'
-      : `file://${path.join(__dirname, '../build/index.html')}`
+    url.format({
+      pathname: path.join(__dirname, `../dist/musicfy/index.html`),
+      protocol: 'file:',
+      slashes: true,
+    })
   );
+  // Open the DevTools.
+  mainWindow.webContents.openDevTools();
 
-  if (isDev) mainWindow.webContents.openDevTools();
-
-  mainWindow.on('closed', () => (mainWindow = null));
+  mainWindow.on('closed', function () {
+    mainWindow = null;
+  });
 }
 
 app.on('ready', createWindow);
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+app.on('window-all-closed', function () {
+  if (process.platform !== 'darwin') app.quit();
 });
 
-app.on('activate', () => {
-  if (mainWindow === null) {
-    createWindow();
-  }
+app.on('activate', function () {
+  if (mainWindow === null) createWindow();
 });
