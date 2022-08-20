@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "musicfy-6d61a": {
+      "hosting": {
+        "musicfy": [
+          "musicfy-6d61a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "musicfy-6d61a"
+  }
+}
