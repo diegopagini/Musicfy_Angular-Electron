@@ -7,8 +7,7 @@
     "start": "ng build --base-href ./ && electron .",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "electron-dev": "ng serve && wait-on http:localhost:3000 && electron ."
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {

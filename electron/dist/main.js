@@ -1,28 +1,35 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// Import necesarios
 var electron_1 = require("electron");
-var path = require("path");
-var url = require("url");
-// Inicializamos la ventana de Electron
-var win;
+var url = require('url');
+var path = require('path');
+var mainWindow;
 function createWindow() {
-    win = new electron_1.BrowserWindow({ width: 800, height: 600 });
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, "/../../dist/musicfy/index.html"),
-        protocol: 'file:',
-        slashes: true,
+    mainWindow = new electron_1.BrowserWindow({
+        width: 1500,
+        height: 1000,
+        title: 'Musicfy',
+    });
+    mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, "../dist/musicfy/index.html"),
+        // protocol: 'file:',
+        // slashes: true,
     }));
-    win.webContents.openDevTools();
-    win.on('closed', function () {
-        win = null;
+    /**
+     * To open DevTools
+     * mainWindow.webContents.openDevTools()
+     */
+    mainWindow.on('closed', function () {
+        mainWindow = null;
     });
 }
-// Para ver el estado de la app
 electron_1.app.on('ready', createWindow);
+electron_1.app.on('window-all-closed', function () {
+    if (process.platform !== 'darwin')
+        electron_1.app.quit();
+});
 electron_1.app.on('activate', function () {
-    if (win === null) {
+    if (mainWindow === null)
         createWindow();
-    }
 });
 //# sourceMappingURL=main.js.map
