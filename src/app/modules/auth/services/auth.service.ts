@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { loginUser } from 'src/app/store/actions/auth.actions';
 
 import { Auth } from '../interfaces/auth.interface';
 
@@ -8,7 +10,11 @@ import { Auth } from '../interfaces/auth.interface';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth, private router: Router) {}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router,
+    private store: Store
+  ) {}
 
   /**
    * Register method.
@@ -34,10 +40,8 @@ export class AuthService {
       .signInWithEmailAndPassword(authData.email, authData.password)
       .then((data: any) => {
         console.log({ data });
-
-        // this.userId$.next(data.user.uid);
+        this.store.dispatch(loginUser({ payload: data.user }));
         this.router.navigate(['/home']);
-        // this.isAuth$.next(true);
       })
       .catch((err) => {
         console.log({ err });

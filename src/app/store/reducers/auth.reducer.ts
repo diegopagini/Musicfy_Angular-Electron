@@ -4,6 +4,7 @@ import { loginUser } from '../actions/auth.actions';
 
 const initialState = {
   user: null,
+  isAuth: false,
 };
 
 export const authReducer = createReducer(
@@ -11,5 +12,6 @@ export const authReducer = createReducer(
   on(loginUser, (state, action) => ({
     ...state,
     user: action.payload,
+    isAuth: true,
   }))
 );
