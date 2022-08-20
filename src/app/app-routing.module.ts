@@ -17,6 +17,13 @@ const routes: Routes = [
     redirectTo: 'auth',
     pathMatch: 'full',
   },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./modules/not-found/not-found.module').then(
+        (m) => m.NotFoundModule
+      ),
+  },
 ];
 
 @NgModule({
