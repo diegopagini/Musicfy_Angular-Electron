@@ -27,7 +27,7 @@ export class AuthService {
         this.router.navigate(['/auth']);
       })
       .catch((err) => {
-        console.log({ err });
+        console.error({ err });
       });
   }
 
@@ -44,7 +44,7 @@ export class AuthService {
         this.router.navigate(['/home']);
       })
       .catch((err) => {
-        console.log({ err });
+        console.error({ err });
       });
   }
 }
