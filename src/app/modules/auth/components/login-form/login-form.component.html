@@ -1,1 +1,25 @@
-<p>login-form works!</p>
+<form class="login-form" [formGroup]="loginForm">
+  <figure class="login-form__logo">
+    <img class="img" src="assets/png/logo-name-white.png" alt="logo" />
+  </figure>
+
+  <div class="ui input" [ngClass]="{ error: emailError }">
+    <input type="email" placeholder="Email" formControlName="email" />
+  </div>
+
+  <div class="ui input" [ngClass]="{ error: passwordError }">
+    <input type="password" placeholder="Password" formControlName="password" />
+  </div>
+
+  <app-button [type]="'submit'" [color]="'primary'" (onClick)="onSubmit()"
+    >Login</app-button
+  >
+
+  <div class="ui horizontal divider">
+    <span>Or</span>
+  </div>
+
+  <app-button [type]="'button'" [color]="'secondary'" (onClick)="onRegister()"
+    >Register</app-button
+  >
+</form>

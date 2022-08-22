@@ -1,6 +1,9 @@
-@import "../../../../../assets/scss/variables";
+@import "~src/assets/scss/variables";
 
 .login {
+  background-image: url("~src/assets/jpg/background-auth.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   @include center;
   @include full;
 }

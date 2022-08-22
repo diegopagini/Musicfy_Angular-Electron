@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -10,12 +13,34 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private _authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, Validators.minLength(6)]],
     });
+  }
+
+  get emailError(): boolean {
+    const email = this.loginForm.get('email');
+    return email!.hasError('required') && email!.touched;
+  }
+
+  get passwordError(): boolean {
+    const password = this.loginForm.get('password');
+    return password!.hasError('required') && password!.touched;
+  }
+
+  onSubmit(): void {
+    this._authService.login(this.loginForm.value);
+  }
+
+  onRegister(): void {
+    this.router.navigateByUrl('/auth/register');
   }
 }

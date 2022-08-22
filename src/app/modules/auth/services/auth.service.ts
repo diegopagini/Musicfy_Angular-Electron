@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { SnackService } from 'src/app/shared/services/snack.service';
 import { loginUser } from 'src/app/store/actions/auth.actions';
 
 import { Auth } from '../interfaces/auth.interface';
@@ -13,7 +14,8 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
-    private store: Store
+    private store: Store,
+    private _snackService: SnackService
   ) {}
 
   /**
@@ -27,7 +29,7 @@ export class AuthService {
         this.router.navigate(['/auth']);
       })
       .catch((err) => {
-        console.error({ err });
+        // this._snackBar.open(err);
       });
   }
 
@@ -44,7 +46,7 @@ export class AuthService {
         this.router.navigate(['/home']);
       })
       .catch((err) => {
-        console.error({ err });
+        this._snackService.open(err.message || 'error');
       });
   }
 }

@@ -1,0 +1,13 @@
+@import "./colors";
+
+.mat-snack-bar-container {
+  background-color: $background-dark;
+}
+
+.mat-simple-snack-bar-content {
+  color: $danger;
+}
+
+.mat-button-wrapper {
+  color: $font-dark;
+}
