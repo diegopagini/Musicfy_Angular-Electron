@@ -1,1 +1,14 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <ul class="navbar__list">
+    <li
+      *ngFor="let route of routes"
+      [routerLink]="route.route"
+      routerLinkActive="navbar__list__item--active"
+    >
+      <a class="navbar__list__item">
+        {{ route.name }}
+        <i [ngClass]="route.icon"></i>
+      </a>
+    </li>
+  </ul>
+</nav>

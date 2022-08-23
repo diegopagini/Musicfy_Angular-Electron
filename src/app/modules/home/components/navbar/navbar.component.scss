@@ -1,0 +1,29 @@
+@import "~src/assets/scss/variables";
+
+.navbar {
+  padding: 1.5rem 0.5rem 0.5rem;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    &__item {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0.5rem;
+      transition: color 250ms ease-in;
+
+      &:hover {
+        color: $primary-color;
+      }
+
+      &--active {
+        border-left: 3px solid $primary-color;
+        border-radius: 3px;
+      }
+    }
+  }
+}

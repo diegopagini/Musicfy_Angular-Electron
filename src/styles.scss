@@ -24,6 +24,11 @@ h6 {
   color: $font-light;
 }
 
+a:hover {
+  color: $font-light;
+  text-decoration: none;
+}
+
 .cdk-overlay-pane {
   position: absolute !important;
   inset: 0;
