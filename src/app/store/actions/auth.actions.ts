@@ -5,3 +5,5 @@ export const loginUser = createAction(
   '[Auth] Login User',
   props<{ payload: User }>()
 );
+
+export const logoutUser = createAction('[Auth] Logout User');

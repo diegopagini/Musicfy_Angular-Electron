@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { SnackService } from 'src/app/shared/services/snack.service';
-import { loginUser } from 'src/app/store/actions/auth.actions';
+import { loginUser, logoutUser } from 'src/app/store/actions/auth.actions';
 
 import { Auth, AuthResponse } from '../interfaces/auth.interface';
 
@@ -47,5 +47,12 @@ export class AuthService {
       .catch((err: { message: string }) => {
         this._snackService.open(err.message || 'error');
       });
+  }
+
+  /**
+   * Logout method.
+   */
+  logout(): void {
+    this.store.dispatch(logoutUser());
   }
 }

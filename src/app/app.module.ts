@@ -15,6 +15,7 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material/material.module';
+import { AuthEffects } from './store/effects/auth.effect';
 import { authReducer } from './store/reducers/auth.reducer';
 
 @NgModule({
@@ -28,8 +29,8 @@ import { authReducer } from './store/reducers/auth.reducer';
     provideFirestore(() => getFirestore()),
     AngularFireAuthModule,
     MaterialModule,
-    StoreModule.forRoot({ auth: authReducer }, {}),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot({ app: authReducer }),
+    EffectsModule.forRoot([AuthEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
