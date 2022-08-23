@@ -1,1 +1,29 @@
-<p>register-form works!</p>
+<form class="register-form fadeIn" [formGroup]="registerForm">
+  <figure class="register-form__logo">
+    <img class="img" src="assets/png/logo-name-white.png" alt="logo" />
+  </figure>
+
+  <div class="ui input">
+    <input type="text" placeholder="Name" formControlName="name" />
+  </div>
+
+  <div class="ui input" [ngClass]="{ error: emailError }">
+    <input type="email" placeholder="Email" formControlName="email" />
+  </div>
+
+  <div class="ui input" [ngClass]="{ error: passwordError }">
+    <input type="password" placeholder="Password" formControlName="password" />
+  </div>
+
+  <app-button [type]="'submit'" [color]="'primary'" (onClick)="onSubmit()"
+    >Register</app-button
+  >
+
+  <div class="ui horizontal divider">
+    <span>Or</span>
+  </div>
+
+  <app-button [type]="'button'" [color]="'secondary'" (onClick)="onLogin()"
+    >Login</app-button
+  >
+</form>

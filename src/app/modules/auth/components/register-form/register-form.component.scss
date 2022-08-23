@@ -1,0 +1,24 @@
+@import "~src/assets/scss/variables";
+
+.register-form {
+  background-color: $background-dark;
+  border-radius: 8px;
+  box-shadow: $shadow;
+  flex-direction: column;
+  padding: 2rem 3rem;
+
+  @include center;
+
+  &__logo {
+    margin: 0;
+    padding: 1rem;
+    .img {
+      max-width: 150px;
+    }
+  }
+
+  .input {
+    min-width: 250px;
+    padding: 1rem 0;
+  }
+}
