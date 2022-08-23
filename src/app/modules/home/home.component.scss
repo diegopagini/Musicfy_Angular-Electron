@@ -1,0 +1,32 @@
+@import "~src/assets/scss/variables";
+
+.home {
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr;
+  grid-template-columns: 1fr 5fr;
+  @include full;
+
+  &__header {
+    border: 1px solid red;
+    grid-row: 1;
+    grid-column: 1/-1;
+  }
+
+  &__navbar {
+    border: 1px solid yellow;
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  &__content {
+    border: 1px solid blue;
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+
+  &__footer {
+    border: 1px solid green;
+    grid-row: 3/3;
+    grid-column: 1/-1;
+  }
+}
