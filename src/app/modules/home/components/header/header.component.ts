@@ -28,6 +28,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/home/dashboard']);
   }
 
+  onSeeProfile(): void {
+    this.router.navigate(['/home/profile']);
+  }
+
   onLogout(): void {
     this._authService.logout();
   }

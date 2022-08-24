@@ -29,6 +29,7 @@ export interface User {
   lastLoginAt: string;
   apiKey: string;
   appName: string;
+  displayName: string;
 }
 
 export interface ProviderDatum {

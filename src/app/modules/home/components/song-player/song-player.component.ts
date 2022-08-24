@@ -13,4 +13,8 @@ export class SongPlayerComponent {
     this.playing = !this.playing;
     if (this.playing) setInterval(() => this.value++, 100);
   }
+
+  onChange(event: any): void {
+    this.value = event.target.value;
+  }
 }

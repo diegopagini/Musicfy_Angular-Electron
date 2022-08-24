@@ -3,8 +3,13 @@
     <i class="caret left icon"></i>
   </button>
 
-  <button (click)="onLogout()" class="header__logout transparent-btn">
-    <p>{{ user.email }}</p>
-    <i class="power off icon"></i>
-  </button>
+  <div role="group" class="header__actions">
+    <button (click)="onSeeProfile()" class="header__profile transparent-btn">
+      <i class="large user outline icon"></i>
+      <p>{{ user.displayName || "user" }}</p>
+    </button>
+    <button (click)="onLogout()" class="header__logout transparent-btn">
+      <i class="power off icon"></i>
+    </button>
+  </div>
 </header>

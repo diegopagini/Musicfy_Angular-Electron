@@ -12,6 +12,7 @@
   <input
     class="song-player__progress"
     type="range"
+    (change)="onChange($event)"
     [value]="value"
     [min]="0"
     [max]="100"

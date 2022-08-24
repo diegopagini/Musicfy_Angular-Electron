@@ -10,11 +10,19 @@
   padding: 0 1rem;
   width: 100%;
 
-  &__logout,
-  &__back {
+  &__actions {
     align-items: center;
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
+  }
+
+  &__profile {
+    align-items: center;
+    display: flex;
+  }
+
+  &__logout,
+  &__back {
     padding: 0.5rem;
   }
 }
