@@ -1,0 +1,12 @@
+<ngx-dropzone
+  class="avatar-update"
+  (change)="onSelect($event)"
+  [multiple]="false"
+>
+  <ngx-dropzone-preview
+    [file]="file"
+    [removable]="true"
+    (removed)="onRemove(file)"
+  >
+  </ngx-dropzone-preview>
+</ngx-dropzone>

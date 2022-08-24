@@ -1,8 +1,4 @@
-<header class="header" *ngIf="user$ | async as user">
-  <button (click)="onBack()" class="header__back transparent-btn">
-    <i class="caret left icon"></i>
-  </button>
-
+<header class="ui header" *ngIf="user$ | async as user">
   <div role="group" class="header__actions">
     <button (click)="onSeeProfile()" class="header__profile transparent-btn">
       <i class="large user outline icon"></i>

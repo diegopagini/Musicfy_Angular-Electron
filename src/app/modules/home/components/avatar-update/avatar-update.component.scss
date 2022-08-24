@@ -1,0 +1,19 @@
+.avatar-update {
+  border-radius: 50%;
+  height: 100px;
+  overflow: hidden;
+  padding: 1rem;
+  width: 100px;
+
+  ngx-dropzone-preview {
+    border-radius: 50% !important;
+    height: 80px !important;
+    margin: 0 !important;
+    max-height: unset !important;
+    max-width: unset !important;
+    min-height: unset !important;
+    min-width: unset !important;
+    padding: 1rem !important;
+    width: 80px !important;
+  }
+}

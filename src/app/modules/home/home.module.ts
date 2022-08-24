@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 import { ComponentsModule } from './components/components.module';
 import { HomeRoutingModule } from './home-routing.module';
@@ -17,6 +18,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
     DashboardComponent,
     ProfileComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ComponentsModule],
+  imports: [CommonModule, HomeRoutingModule, ComponentsModule, SharedModule],
 })
 export class HomeModule {}

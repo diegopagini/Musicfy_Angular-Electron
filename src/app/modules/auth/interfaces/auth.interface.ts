@@ -30,6 +30,7 @@ export interface User {
   apiKey: string;
   appName: string;
   displayName: string;
+  password?: string;
 }
 
 export interface ProviderDatum {

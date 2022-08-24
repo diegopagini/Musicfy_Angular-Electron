@@ -1,3 +1,20 @@
 <section class="profile" *ngIf="user$ | async as user">
-  {{ user | json }}
+  <h1 class="profile__title">Configuration</h1>
+
+  <div class="ui divider"></div>
+
+  <div class="group">
+    <app-avatar-update></app-avatar-update>
+    <app-button [type]="'button'" [color]="'secondary'">Update</app-button>
+  </div>
+
+  <div *ngIf="user.email" class="group">
+    <p>Email: {{ user.email }}</p>
+    <app-button [type]="'button'" [color]="'secondary'">Update</app-button>
+  </div>
+
+  <div *ngIf="user.password" class="group">
+    <p>Password: {{ user.password }}</p>
+    <app-button [type]="'button'" [color]="'secondary'">Update</app-button>
+  </div>
 </section>
