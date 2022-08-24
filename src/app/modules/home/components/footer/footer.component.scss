@@ -1,0 +1,23 @@
+@import "~src/assets/scss/variables";
+
+:host {
+  align-items: center;
+  display: flex;
+}
+
+.footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  width: 100%;
+
+  &__song-volume {
+    align-items: center;
+    display: flex;
+
+    #volume {
+      cursor: pointer;
+    }
+  }
+}

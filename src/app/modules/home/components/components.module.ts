@@ -6,12 +6,14 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SongPlayerComponent } from './song-player/song-player.component';
 
 const components = [
   NavbarComponent,
   HeaderComponent,
   FooterComponent,
   ContentComponent,
+  SongPlayerComponent,
 ];
 
 @NgModule({

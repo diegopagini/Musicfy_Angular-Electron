@@ -11,3 +11,10 @@
 .mat-button-wrapper {
   color: $font-dark;
 }
+
+.transparent-btn {
+  background-color: transparent;
+  border: unset;
+  cursor: pointer;
+  padding: 0.5rem;
+}

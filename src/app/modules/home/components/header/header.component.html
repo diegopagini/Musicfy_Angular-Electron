@@ -1,9 +1,9 @@
 <header class="header" *ngIf="user$ | async as user">
-  <button (click)="onBack()" class="header__back">
+  <button (click)="onBack()" class="header__back transparent-btn">
     <i class="caret left icon"></i>
   </button>
 
-  <button (click)="onLogout()" class="header__logout">
+  <button (click)="onLogout()" class="header__logout transparent-btn">
     <p>{{ user.email }}</p>
     <i class="power off icon"></i>
   </button>
