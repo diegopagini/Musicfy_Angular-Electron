@@ -13,7 +13,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(logoutUser),
-        tap(() => this.router.navigateByUrl('/auth/login'))
+        tap(() => this.router.navigateByUrl('/auth'))
       ),
     {
       dispatch: false,

@@ -53,6 +53,7 @@ export class AuthService {
    * Logout method.
    */
   logout(): void {
+    this.afAuth.signOut();
     this.store.dispatch(logoutUser());
   }
 }

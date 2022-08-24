@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
@@ -27,6 +28,7 @@ import { authReducer } from './store/reducers/auth.reducer';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
     AngularFireAuthModule,
     MaterialModule,
     StoreModule.forRoot({ app: authReducer }),
