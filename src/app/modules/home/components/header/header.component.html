@@ -1,10 +1,7 @@
 <header class="ui header" *ngIf="user$ | async as user">
   <div role="group" class="header__actions">
-    <button (click)="onSeeProfile()" class="header__profile transparent-btn">
-      <i class="large user outline icon"></i>
-      <p>{{ user.displayName || "user" }}</p>
-    </button>
     <button (click)="onLogout()" class="header__logout transparent-btn">
+      <p>{{ user.email || "user" }}</p>
       <i class="power off icon"></i>
     </button>
   </div>

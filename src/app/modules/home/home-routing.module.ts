@@ -5,7 +5,6 @@ import { HomeComponent } from './home.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { ArtistsComponent } from './pages/artists/artists.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -24,10 +23,7 @@ const routes: Routes = [
         path: 'artists',
         component: ArtistsComponent,
       },
-      {
-        path: 'profile',
-        component: ProfileComponent,
-      },
+
       {
         path: '',
         redirectTo: 'dashboard',

@@ -8,7 +8,6 @@ import { HomeComponent } from './home.component';
 import { AlbumsComponent } from './pages/albums/albums.component';
 import { ArtistsComponent } from './pages/artists/artists.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +15,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AlbumsComponent,
     ArtistsComponent,
     DashboardComponent,
-    ProfileComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, ComponentsModule, SharedModule],
 })

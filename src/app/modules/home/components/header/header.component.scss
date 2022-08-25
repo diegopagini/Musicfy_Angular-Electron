@@ -14,13 +14,10 @@
     gap: 1rem;
   }
 
-  &__profile {
+  &__logout {
     align-items: center;
     display: flex;
-  }
-
-  &__logout,
-  &__back {
+    gap: 1rem;
     padding: 0.5rem;
   }
 }

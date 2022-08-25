@@ -9,9 +9,11 @@ function createWindow() {
         width: 1500,
         height: 1000,
         title: 'Musicfy',
+        titleBarStyle: 'hiddenInset',
+        // kiosk: true
     });
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, "../dist/musicfy/index.html"),
+        pathname: path.join(__dirname, "../../dist/musicfy/index.html"),
         // protocol: 'file:',
         // slashes: true,
     }));
@@ -19,6 +21,7 @@ function createWindow() {
      * To open DevTools
      * mainWindow.webContents.openDevTools()
      */
+    mainWindow.setMenu(null); // To avoid showing a menu
     mainWindow.on('closed', function () {
         mainWindow = null;
     });
